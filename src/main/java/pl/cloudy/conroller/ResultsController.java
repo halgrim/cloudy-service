@@ -4,7 +4,6 @@ import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -98,11 +97,11 @@ public class ResultsController
 		{
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
-		HttpHeaders responseHeaders = new HttpHeaders();
-		responseHeaders.set("Access-Control-Allow-Origin", "*");
+		//HttpHeaders responseHeaders = new HttpHeaders();
+		//responseHeaders.set("Access-Control-Allow-Origin", "*");
 
-
-		return new ResponseEntity<>(testRunResults, responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<>(testRunResults, HttpStatus.OK);
+		//return new ResponseEntity<>(testRunResults, responseHeaders, HttpStatus.OK);
 	}
 
 	//-------------------Retrieve Images For a Given test run---------------------------------------------------------
